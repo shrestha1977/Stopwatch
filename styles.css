@@ -1,0 +1,111 @@
+:root {
+    --bg-light: radial-gradient(circle at top left, #e0f7fa, #b2ebf2);
+    --bg-dark: radial-gradient(circle at top left, #1f1f1f, #3a3a3a);
+    --text-light: #111;
+    --text-dark: #f0f0f0;
+    --container-bg-light: #ffffffcc;
+    --container-bg-dark: #2e2e2ecc;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: background 0.5s, color 0.5s;
+  }
+  
+  body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  
+  .half-circle {
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .stopwatch-container {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .time {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 12px 24px;
+    margin: 6px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(33, 147, 176, 0.5);
+  }
+  
+  .clear-btn {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+  }
+  
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .laps {
+    margin-top: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+    width: 320px;
+    background: var(--container-bg-light);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: background 0.5s;
+  }
+  
+  body.dark .laps {
+    background: var(--container-bg-dark);
+  }
+  
+  .lap {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    font-family: monospace;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  .lap:last-child {
+    border-bottom: none;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
